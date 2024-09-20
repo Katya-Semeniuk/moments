@@ -19,6 +19,7 @@ import Asset from "../../components/Asset";
 import PopularProfiles from "../profiles/PopularProfiles";
 
 
+
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
@@ -86,7 +87,7 @@ function PostPage() {
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
         
-        Popular profiles for desktop
+      <PopularProfiles />
       </Col>
     </Row>
   );
