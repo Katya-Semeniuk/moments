@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+// import Col from "react-bootstrap/Col";
+// import Row from "react-bootstrap/Row";
 // import Container from "react-bootstrap/Container";
-import { Container, Button, Image } from "react-bootstrap";
+import { Container, Button, Image, Col, Row } from "react-bootstrap";
 
 import Asset from "../../components/Asset";
 
@@ -18,6 +18,7 @@ import { axiosReq } from "../../api/axiosDefault";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import Post from "../posts/Post";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 import {
     useProfileData,
@@ -60,6 +61,7 @@ function ProfilePage() {
 
   const mainProfile = (
     <>
+    {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
       <Row noGutters className="px-3 text-center">
         <Col lg={3} className="text-lg-left">
         <Image
